@@ -13,6 +13,8 @@ Text Domain:  anticipate
 
 defined('ABSPATH') or die('Error: this file is not to be called separately.');
 require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/lib/eduardovillao/class-updater-checker.php';
+
 include_once('lib/laposta/lapostaimplementatie.php');
 include_once('lib/cookieyes/cookieyes.php');
 
@@ -22,6 +24,23 @@ include_once 'adminpages/extracode.php';
 include_once 'blocks/blocks.php';
 include_once 'shortcodes/shortcodes.php';
 // include_once 'lib/iframechanger.php';
+
+// UPDATER CHECKER
+use Updater_Checker; // Use your namespace
+
+$github_username = 'Anticipate-Media'; // Use your gitbub username
+$github_repository = 'WP-Anticipate'; // Use your repository name
+$plugin_basename = plugin_basename( __FILE__ ); // Check note below
+$plugin_current_version = '4.0'; // Use the current version of the plugin
+
+$updater = new Updater_Checker(
+    $github_username,
+    $github_repository,
+    $plugin_basename,
+    $plugin_current_version
+);
+$updater->set_hooks();
+
 
 add_action(
     'wp_head', 
