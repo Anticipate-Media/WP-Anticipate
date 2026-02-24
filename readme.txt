@@ -1,4 +1,4 @@
-=== WP Anticipate ===
+=== WP-Anticipate ===
 Contributors: artyfarty
 Requires at least: 6.0
 Tested up to: 6.9
