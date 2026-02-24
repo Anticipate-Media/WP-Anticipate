@@ -167,10 +167,9 @@ class Updater_Checker {
 		$result->sections = array(
 			'description' => $metadata_from_server['sections']['description'] ?? '',
 			'installation' => $metadata_from_server['sections']['installation'] ?? '',
-			'changelog' => $metadata_from_server['sections']['changelog'] ?? '',
+			'changelog' => 'Changelog data unavailable',// $metadata_from_server['sections']['changelog'] ?? '',
 			'upgrade_notice' => $metadata_from_server['sections']['upgrade_notice'] ?? '',
 		);
-
 		return $result;
 	}
 
