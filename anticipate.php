@@ -3,7 +3,7 @@
 Plugin Name:  Anticipate Plugin
 Plugin URI:   https://anticipate.nl
 Description:  Extra functionaliteiten
-Version:      4.0.4
+Version:      4.0.5
 Author:       Anticipate / Aart Jan
 Author URI:   https://anticipate.nl/
 License:      GPL2
@@ -32,7 +32,7 @@ include_once 'shortcodes/shortcodes.php';
 $github_username = 'Anticipate-Media'; // Use your gitbub username
 $github_repository = 'WP-Anticipate'; // Use your repository name
 $plugin_basename = plugin_basename( __FILE__ ); // Check note below
-$plugin_current_version = '4.0.4'; // Use the current version of the plugin
+$plugin_current_version = '4.0.5'; // Use the current version of the plugin
 
 $updater = new Updater_Checker(
     $github_username,
