@@ -1,0 +1,17 @@
+{
+  "name": "WP-Anticipate",
+  "slug": "4.0",
+  "author": "artyfarty",
+  "author_profile": "",
+  "version": "4.0",
+  "download_url": "https://github.com/Anticipate-Media/WP-Anticipate/releases/download/4.0.1/WP-Anticipate-4.0.1.zip",
+  "requires": "6.0",
+  "tested": "6.9",
+  "requires_php": "7.0",
+  "last_updated": "2026-02-24T14:40:22.351Z",
+  "sections": {
+    "description": "",
+    "installation": "",
+    "changelog": []
+  }
+}
