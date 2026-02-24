@@ -1,5 +1,6 @@
 {
     "require": {
-        "laposta/laposta-api-php": "1.6"
+        "laposta/laposta-api-php": "1.6",
+        "yahnis-elsts/plugin-update-checker": "^5.6"
     }
 }
