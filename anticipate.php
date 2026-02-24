@@ -3,7 +3,7 @@
 Plugin Name:  Anticipate Plugin
 Plugin URI:   https://anticipate.nl
 Description:  Extra functionaliteiten
-Version:      4.0.7
+Version:      4.0.8
 Author:       Anticipate / Aart Jan
 Author URI:   https://anticipate.nl/
 License:      GPL2
@@ -28,13 +28,13 @@ include_once 'shortcodes/shortcodes.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $updateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/Anticipate-Media/WP-Anticipate',
+    'https://raw.githubusercontent.com/Anticipate-Media/WP-Anticipate/refs/heads/main/version.yml',
     __FILE__,
     'WP-Anticipate'
 );
 
 // Optioneel: alleen releases gebruiken
-$updateChecker->getVcsApi()->enableReleaseAssets();
+//$updateChecker->getVcsApi()->enableReleaseAssets();
 
 add_action(
     'wp_head', 
