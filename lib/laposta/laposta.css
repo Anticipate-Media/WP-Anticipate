@@ -1,0 +1,12 @@
+
+.lapostaform label {
+        display: block;
+}
+
+.lapostaform .checkboxlabel {
+        display: flex;
+}
+
+.lapostaform .checkboxlabel input{
+        margin-right: 10px;
+}

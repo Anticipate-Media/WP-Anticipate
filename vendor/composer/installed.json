@@ -1,0 +1,57 @@
+{
+    "packages": [
+        {
+            "name": "laposta/laposta-api-php",
+            "version": "1.6",
+            "version_normalized": "1.6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laposta/laposta-api-php.git",
+                "reference": "21c3ed74310aab083d1f083393d24df801dc036a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laposta/laposta-api-php/zipball/21c3ed74310aab083d1f083393d24df801dc036a",
+                "reference": "21c3ed74310aab083d1f083393d24df801dc036a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "time": "2023-02-15T10:32:30+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "lib/Laposta.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stijn van der Ree",
+                    "email": "stijn@laposta.nl"
+                }
+            ],
+            "description": "Laposta api, free api to laposta.nl",
+            "homepage": "http://laposta.nl",
+            "keywords": [
+                "api",
+                "email",
+                "email-marketing",
+                "marketing",
+                "newsletter"
+            ],
+            "support": {
+                "issues": "https://github.com/laposta/laposta-api-php/issues",
+                "source": "https://github.com/laposta/laposta-api-php/tree/1.6"
+            },
+            "install-path": "../laposta/laposta-api-php"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

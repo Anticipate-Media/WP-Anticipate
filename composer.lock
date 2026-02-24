@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3a089ffa33a5ef7f5ec48720296d4057",
+    "packages": [
+        {
+            "name": "laposta/laposta-api-php",
+            "version": "1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laposta/laposta-api-php.git",
+                "reference": "21c3ed74310aab083d1f083393d24df801dc036a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laposta/laposta-api-php/zipball/21c3ed74310aab083d1f083393d24df801dc036a",
+                "reference": "21c3ed74310aab083d1f083393d24df801dc036a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/Laposta.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stijn van der Ree",
+                    "email": "stijn@laposta.nl"
+                }
+            ],
+            "description": "Laposta api, free api to laposta.nl",
+            "homepage": "http://laposta.nl",
+            "keywords": [
+                "api",
+                "email",
+                "email-marketing",
+                "marketing",
+                "newsletter"
+            ],
+            "support": {
+                "issues": "https://github.com/laposta/laposta-api-php/issues",
+                "source": "https://github.com/laposta/laposta-api-php/tree/1.6"
+            },
+            "time": "2023-02-15T10:32:30+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

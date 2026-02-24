@@ -1,0 +1,5 @@
+{
+    "require": {
+        "laposta/laposta-api-php": "1.6"
+    }
+}
