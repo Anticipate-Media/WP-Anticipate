@@ -13,10 +13,10 @@ jobs:
 
       - name: Create ZIP
         run: |
-          # Ga naar de parent directory
+          ls -la # Toon alle bestanden/mappen (voor debuggen)
+          cd $GITHUB_WORKSPACE
           cd ..
-          # Maak een ZIP van de plugin-map met de juiste naam
-          zip -r WP-Anticipate.zip WP-Anticipate/
+          zip -r WP-Anticipate.zip WP-Anticipate/          
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
