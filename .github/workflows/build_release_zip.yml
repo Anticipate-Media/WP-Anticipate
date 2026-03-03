@@ -1,0 +1,29 @@
+name: Build Release ZIP
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create ZIP
+        run: |
+          # Ga naar de parent directory
+          cd ..
+          # Maak een ZIP van de plugin-map met de juiste naam
+          zip -r WP-Anticipate.zip WP-Anticipate/
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./WP-Anticipate.zip
+          asset_name: WP-Anticipate.zip
+          asset_content_type: application/zip
