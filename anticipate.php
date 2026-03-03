@@ -85,6 +85,7 @@ function self_update( $update, array $plugin_data, string $plugin_file, $locales
 		'version' => $new_version_number,
 		'url'     => $new_url,
 		'package' => $new_package,
+		'plugin_file' => 'WP-Anticipate/anticipate.php',
 
 	);
 }
