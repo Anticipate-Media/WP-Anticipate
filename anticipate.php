@@ -3,7 +3,7 @@
 Plugin Name:  Anticipate Plugin
 Plugin URI:   https://anticipate.nl
 Description:  Extra functionaliteiten
-Version:      4.1
+Version:      4.1.1
 Author:       Anticipate / Aart Jan
 Author URI:   https://anticipate.nl/
 License:      GPL2
@@ -119,3 +119,61 @@ add_action(
         wp_enqueue_style( 'anticipatestyle', plugins_url( '/anticipate.css' , __FILE__ ),[],202602181828 );
     }
 );
+
+/**
+ * Verwijdert alle .zip en .sql bestanden uit de map lib/database van deze plugin.
+ * Kan veilig via WP_Filesystem of direct via PHP worden uitgevoerd.
+ */
+function anticipate_cleanup_database_backups(): void {
+	$base_dir = plugin_dir_path(__FILE__);
+	$target_dir = $base_dir . 'lib/database/';
+
+	// Beveiliging: zorg dat het pad binnen de plugin map ligt
+	$real_base = realpath($base_dir);
+	$real_target = realpath($target_dir) ?: $target_dir; // map kan bestaan zonder bestanden
+	if ($real_base === false || strpos($real_target, $real_base) !== 0) {
+		return; // onveilig pad, niets doen
+	}
+
+	$patterns = [
+		$target_dir . '*.zip',
+		$target_dir . '*.sql',
+	];
+	// die($target_dir . '*.sql');
+	// Probeer WP_Filesystem indien beschikbaar
+	global $wp_filesystem;
+	if (! function_exists('WP_Filesystem')) {
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+	}
+	if (function_exists('WP_Filesystem') && WP_Filesystem() && is_object($wp_filesystem)) {
+		foreach ($patterns as $pattern) {
+			foreach (glob($pattern) ?: [] as $file) {
+				// Dubbele check dat het bestand in de target map staat
+				if (strpos(realpath($file) ?: $file, $real_target) === 0) {
+					$wp_filesystem->delete($file);
+				}
+			}
+		}
+		return;
+	}
+
+	// Fallback: native PHP verwijdering
+	foreach ($patterns as $pattern) {
+		foreach (glob($pattern) ?: [] as $file) {
+			if (is_file($file)) {
+				@unlink($file);
+			}
+		}
+	}
+}
+
+
+// Optioneel: koppel aan een admin-actie zodat het handmatig aangeroepen kan worden via admin-ajax
+add_action('wp_ajax_anticipate_cleanup_database_backups', function () {
+	// Alleen voor administrators
+	if (! current_user_can('manage_options')) {
+		wp_send_json_error('forbidden', 403);
+	}
+	anticipate_cleanup_database_backups();
+	wp_send_json_success(['status' => 'done']);
+});

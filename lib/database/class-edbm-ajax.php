@@ -5,7 +5,7 @@ add_action('wp_ajax_edbm_export', function () {
 
     $offset = intval($_POST['offset']);
 
-    $more = EDBM_Export::process($offset);
+    $more = EDBM_Export::process($offset, $_SERVER['SERVER_NAME'] . '_backup_' . date("Ymd"));
 
     wp_send_json([
         'more' => $more,
@@ -17,7 +17,7 @@ add_action('wp_ajax_edbm_export_zip', function () {
 
     check_ajax_referer('edbm_nonce');
 
-    $url = EDBM_Export::zip();
+    $url = EDBM_Export::zip($_SERVER['SERVER_NAME'] . '_backup_' . date("Ymd"));
 
     wp_send_json(['url' => $url]);
 });

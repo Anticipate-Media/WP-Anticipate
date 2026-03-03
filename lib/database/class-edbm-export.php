@@ -1,7 +1,7 @@
 <?php
 class EDBM_Export {
 
-    public static function process($offset = 0) {
+    public static function process($offset = 0, $filename='backup') {
 
     global $wpdb;
 
@@ -9,7 +9,8 @@ class EDBM_Export {
     // $limit  = 500; // rows per batch
     $max_insert_rows = 200; // rows per grouped INSERT
 
-    $file = EDBM_PATH . 'backup.sql';
+    $filename = $_SERVER['SERVER_NAME'] . '_backup_' . date("Ymd");
+    $file = EDBM_PATH . $filename . '.sql';
     $handle = fopen($file, $offset === 0 ? 'w' : 'a');
 
     foreach ($tables as $table) {
@@ -111,16 +112,18 @@ class EDBM_Export {
 }
 
 
-    public static function zip() {
+    public static function zip($filename='backup') {
 
         $zip = new ZipArchive();
-        $zipFile = EDBM_PATH . 'backup.zip';
+
+
+        $zipFile = EDBM_PATH . $filename . '.zip';
 
         if ($zip->open($zipFile, ZipArchive::CREATE | ZipArchive::OVERWRITE)) {
-            $zip->addFile(EDBM_PATH . 'backup.sql', 'backup.sql');
+            $zip->addFile(EDBM_PATH . $filename.'.sql', $filename.'.sql');
             $zip->close();
         }
 
-        return EDBM_URL . 'backup.zip';
+        return EDBM_URL . $filename . '.zip';
     }
 }
