@@ -11,12 +11,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Create correct directory structure
+        run: |
+          mkdir -p WP-Anticipate
+          # Kopieer alle bestanden (behalve verborgen bestanden zoals .git) naar de nieuwe map
+          shopt -s extglob
+          cp -r !(WP-Anticipate) WP-Anticipate/
+          ls -la WP-Anticipate/ # Debug: toon de inhoud van de map
+
       - name: Create ZIP
         run: |
-          ls -la # Toon alle bestanden/mappen (voor debuggen)
-          cd $GITHUB_WORKSPACE
-          cd ..
-          zip -r WP-Anticipate.zip WP-Anticipate/          
+          zip -r WP-Anticipate.zip WP-Anticipate/
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
