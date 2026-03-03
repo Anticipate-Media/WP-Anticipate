@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '8f5f68fcc55502f898c2d4020e578b56' => $vendorDir . '/laposta/laposta-api-php/lib/Laposta.php',
-    'f6d4f6bcee7247df6b777884c3e22f98' => $vendorDir . '/yahnis-elsts/plugin-update-checker/load-v5p6.php',
 );
