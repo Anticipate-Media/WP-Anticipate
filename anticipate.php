@@ -73,8 +73,11 @@ function self_update( $update, array $plugin_data, string $plugin_file, $locales
 	}
 
 	$new_url     = $output['html_url'];
-	$new_package = $output['zipball_url'];
-
+	// $new_package = $output['zipball_url'];
+	$new_package = sprintf(
+		'https://github.com/Anticipate-Media/WP-Anticipate/releases/download/%s/WP-Anticipate.zip',
+		$new_version_number
+	);
 	error_log('$plugin_data: ' . print_r( $plugin_data, true ));
 	error_log('$new_version_number: ' . $new_version_number );
 	error_log('$new_url: ' . $new_url );
