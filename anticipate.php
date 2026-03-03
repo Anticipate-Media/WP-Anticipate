@@ -28,7 +28,7 @@ include_once 'shortcodes/shortcodes.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $updateChecker = PucFactory::buildUpdateChecker(
-    'https://raw.githubusercontent.com/Anticipate-Media/WP-Anticipate/refs/heads/main/anticipate.php',
+    'https://raw.githubusercontent.com/Anticipate-Media/WP-Anticipate/refs/heads/main/version.yml',
     __FILE__,
     'WP-Anticipate'
 );
