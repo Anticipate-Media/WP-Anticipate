@@ -3,7 +3,7 @@
 Plugin Name:  Anticipate Plugin
 Plugin URI:   https://anticipate.nl
 Description:  Extra functionaliteiten
-Version:      4.0.16
+Version:      4.1
 Author:       Anticipate / Aart Jan
 Author URI:   https://anticipate.nl/
 License:      GPL2
@@ -64,7 +64,7 @@ function self_update( $update, array $plugin_data, string $plugin_file, $locales
 	} else {
 		$output = json_decode( wp_remote_retrieve_body( $response ), true );
 	}
-    // die(print_r($output,1));
+
 	$new_version_number  = $output['tag_name'];
 	$is_update_available = version_compare( $plugin_data['Version'], $new_version_number, '<' );
 
@@ -73,7 +73,6 @@ function self_update( $update, array $plugin_data, string $plugin_file, $locales
 	}
 
 	$new_url     = $output['html_url'];
-	// $new_package = $output['zipball_url'];
 	$new_package = sprintf(
 		'https://github.com/Anticipate-Media/WP-Anticipate/releases/download/%s/WP-Anticipate.zip',
 		$new_version_number
