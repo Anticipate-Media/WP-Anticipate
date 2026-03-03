@@ -11,7 +11,7 @@ require_once EDBM_PATH . 'class-edbm-restore.php';
 require_once EDBM_PATH . 'class-edbm-ajax.php';
 
 add_action('admin_menu', function () {
-    add_options_page(
+    add_management_page(
         'Anticipate DB',
         'Anticipate DB',
         'manage_options',
