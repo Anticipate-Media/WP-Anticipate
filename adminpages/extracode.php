@@ -187,7 +187,7 @@ class AnticipateSettingsPage
     public function additional_header_code_callback()
     {
         printf(
-            '<textarea style="width: 700px; height: 400px; display: block" id="additional_header_code" name="anticipate_settings[additional_header_code]">%s</textarea>',
+            '<textarea style="width: 700px; height: 200px; display: block" id="additional_header_code" name="anticipate_settings[additional_header_code]">%s</textarea>',
             isset($this->options['additional_header_code']) ? esc_attr($this->options['additional_header_code']) : ''
         );
     }

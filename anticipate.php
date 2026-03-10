@@ -3,7 +3,7 @@
 Plugin Name:  Anticipate Plugin
 Plugin URI:   https://anticipate.nl
 Description:  Extra functionaliteiten
-Version:      4.1.3
+Version:      4.1.4
 Author:       Anticipate / Aart Jan
 Author URI:   https://anticipate.nl/
 License:      GPL2
