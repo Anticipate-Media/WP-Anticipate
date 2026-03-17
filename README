@@ -1,1 +1,5 @@
-Let op: Geef anticipate.php een versienummer. Upload nar github en maak een release aan met hetzelfde versienummer!
+=== Anticipate plugin ===
+Plugin voor alle websites in onderhoud bj Anticipate.nl
+
+== Changelog ==
+1.4.5 - Uitzonderingen voor CookieYes aan deferred JS toegevoegd

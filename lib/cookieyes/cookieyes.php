@@ -23,3 +23,14 @@ add_filter( 'rocket_defer_inline_exclusions', function( $inline_exclusions_list 
   $inline_exclusions_list[] = 'cookieyes';
   return $inline_exclusions_list;
 } );
+
+add_filter( 'pre_get_rocket_option_delay_js_exclusions', function( $exclusions_list ) {
+  if ( ! is_array( $exclusions_list ) ) {
+    $exclusions_list = array();
+  }
+  $exclusions_list[] = 'maps.googleapis.com';
+  $exclusions_list[] = 'cookieyes';
+  $exclusions_list[] = 'cookie-law-info';
+  $exclusions_list[] = 'cdn-cookieyes.com';
+  return $exclusions_list;
+},10,1 );
