@@ -19,4 +19,15 @@
     top: -70px;
     height: 1.5rem;
 }
+
+.video-placeholder-text-youtube {
+    line-height: 15px;
+    padding: 14px 16px 14px !important;
+}
+
+.video-placeholder-youtube {
+    background-image: none !important;
+    position: absolute !important;
+    top: 0;
+}
 /**************************************************************************/
